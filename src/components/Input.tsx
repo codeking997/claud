@@ -1,3 +1,4 @@
+
 export default function Input() {
     const ing = ["chicken", "rice", "broccoli"];
     function handleSearch() {
@@ -7,14 +8,20 @@ export default function Input() {
     function overInput() {
         console.log('Mouse over input field');
     }
+    function onSubConsole () {
+        console.log('Form submitted');
+    }
   return (
     <div className="flex items-center justify-center mt-4">
+        <form onSubmit={onSubConsole}>
       <input
         onMouseOver={overInput}
         type="text"
         placeholder="Enter a recipe..."
         className="border border-gray-300 rounded-md p-2 w-full max-w-md focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
+       <button>example</button>
+      </form>
       <button onClick={handleSearch}>
         Search
       </button>
